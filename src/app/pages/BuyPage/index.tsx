@@ -109,8 +109,8 @@ export function BuyPage() {
               sx={{
                 mb: '20px',
                 width: '600px',
-                fontSize: '29px',
-                lineHeight: '36px',
+                fontSize: '20px',
+                lineHeight: '24px',
                 fontWeight: 700,
                 textTransform: 'capitalize',
               }}
@@ -157,13 +157,13 @@ export function BuyPage() {
             <FormBuy onSubmit={form.handleSubmit(onSubmit)}>
               <Box
                 sx={{
-                  fontSize: '29px',
-                  lineHeight: '36px',
+                  fontSize: '20px',
+                  lineHeight: '24px',
                   fontWeight: 700,
                   textTransform: 'capitalize',
                 }}
               >
-                Thông tin người mua
+                Thông tin người nhận
               </Box>
               <Box>
                 <LabelBuy>Họ</LabelBuy>

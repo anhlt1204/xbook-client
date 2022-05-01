@@ -3,7 +3,7 @@ import { OneColumnLayout } from 'app/components/Layout';
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { BottomCart, CartButton, CartTableWrapper, TopCart } from './style';
-import ShoppingBasketOutlinedIcon from '@mui/icons-material/ShoppingBasketOutlined';
+import LocalMallIcon from '@mui/icons-material/LocalMall';
 import ItemCart from '../../components/ItemCart';
 import ButtonCustom from 'app/components/ButtonCustom';
 import { useSelector } from 'react-redux';
@@ -27,8 +27,8 @@ export function CartPage() {
       <OneColumnLayout>
         <Box sx={{ mt: '50px', mb: '50px', minHeight: 'calc(100vh - 260px)' }}>
           <TopCart>
-            <ShoppingBasketOutlinedIcon />
-            <Typography component="h2">Giỏ hàng</Typography>
+            <LocalMallIcon />
+            <Typography component="h2">Giỏ hàng của bạn</Typography>
           </TopCart>
           <BottomCart>
             {detailCart.orderItems.length === 0 ? (

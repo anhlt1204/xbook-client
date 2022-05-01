@@ -15,7 +15,7 @@ export const BreadcumbItem = styled('span')(({ theme }) => ({
   '&:hover': { cursor: 'pointer', color: '#00E5FF' },
 
   '&.selected': {
-    color: '#F04F5B',
+    color: '#bb0000',
   },
 }));
 

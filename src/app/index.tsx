@@ -39,8 +39,6 @@ export function App() {
 
   const dispatch = useDispatch();
 
-  const accessToken = localStorage.getItem('access_token');
-
   const { actions } = useGlobalSlice();
 
   const { actions: cartActions } = useCartSlice();
@@ -56,7 +54,7 @@ export function App() {
   }, [user]); // eslint-disable-line react-hooks/exhaustive-deps
 
   React.useEffect(() => {
-    if (accessToken !== null) {
+    if (localStorage.getItem('access_token') !== null) {
       dispatch(actions.getUserProfileRequest());
     }
 
@@ -64,7 +62,7 @@ export function App() {
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   React.useEffect(() => {
-    if (accessToken === null) {
+    if (localStorage.getItem('access_token') === null) {
       return;
     }
 

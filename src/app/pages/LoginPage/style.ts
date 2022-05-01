@@ -14,7 +14,7 @@ export const LoginBox = styled(Box)(({ theme }) => ({
   width: '555px',
   maxHeight: '550px',
   padding: '50px',
-  border: '1px solid #00E5FF',
+  border: '1px solid #bb0000',
   borderRadius: '24px',
 }));
 

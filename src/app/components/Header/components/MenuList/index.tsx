@@ -8,6 +8,8 @@ import styled from 'styled-components';
 export default function MenuList({ children }) {
   const history = useHistory();
 
+  const path = history.location.pathname;
+
   const { listCategory } = useSelector(selectGlobal);
 
   const handleRedirect = id => {
@@ -15,12 +17,15 @@ export default function MenuList({ children }) {
   };
   return (
     <Tooltip
-      placement={'bottom'}
-      arrow
+      placement={'bottom-end'}
       title={
         <MenuBox>
-          {listCategory.map((e, i) => (
-            <MenuItem onClick={() => handleRedirect(e.id)} key={i}>
+          {listCategory.slice(4, -1).map((e, i) => (
+            <MenuItem
+              onClick={() => handleRedirect(e.id)}
+              key={i}
+              className={path === `/product-list/${e.id}` ? 'active' : ''}
+            >
               {e.name}
             </MenuItem>
           ))}
@@ -29,9 +34,12 @@ export default function MenuList({ children }) {
       componentsProps={{
         tooltip: {
           sx: {
+            marginTop: '8px !important',
             padding: '20px',
             minHeight: '100px',
-            maxWidth: '600px',
+            maxWidth: `${
+              listCategory.slice(4, -1).length > 6 ? '600px' : '300px'
+            }`,
             borderRadius: '12px',
             boxShadow:
               '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 10px 32px 0 rgba(0, 0, 0, 0.19)',
@@ -64,6 +72,10 @@ const MenuItem = styled(Box)(({ theme }) => ({
 
   '&:hover': {
     cursor: 'pointer',
-    color: '#00E5FF',
+    color: '#bb0000',
+  },
+
+  '&.active': {
+    color: '#bb0000',
   },
 }));

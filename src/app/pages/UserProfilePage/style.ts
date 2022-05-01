@@ -18,7 +18,7 @@ export const BottomProfile = styled(Box)(({ theme }) => ({
   margin: 'auto',
   width: '500px',
   padding: '50px',
-  border: '2px solid #51BF29',
+  border: '2px solid #bb0000',
   borderRadius: '20px',
 }));
 

@@ -4,19 +4,19 @@ import { styled } from '@mui/system';
 export const TopBuy = styled(Box)(({ theme }) => ({
   marginBottom: '70px',
   display: 'flex',
-  flexDirection: 'column',
+  gap: '20px',
   justifyContent: 'center',
   alignItems: 'center',
+  color: '#bb0000',
 
   '& .MuiSvgIcon-root': {
-    width: '100px',
-    height: '100px',
-    color: '#51BF29',
+    width: '36px',
+    height: '36px',
   },
 
   '& h2': {
-    fontSize: '29px',
-    lineHeight: '36px',
+    fontSize: '27px',
+    lineHeight: '34px',
     fontWeight: 700,
   },
 }));

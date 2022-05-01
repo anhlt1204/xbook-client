@@ -7,13 +7,13 @@ export default function LogoHeader() {
     <>
       <Link
         to="/"
-        style={{ display: 'block', textDecoration: 'none', color: '#000000' }}
+        style={{ display: 'block', textDecoration: 'none', color: '#bb0000' }}
       >
         <Typography
           component="h1"
           sx={{ fontSize: '40px', fontWeight: 'bold', lineHeight: '48px' }}
         >
-          TÂM AN
+          XBOOK
         </Typography>
       </Link>
     </>

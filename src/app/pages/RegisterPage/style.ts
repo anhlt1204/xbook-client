@@ -11,7 +11,7 @@ export const RegisterBox = styled(Box)(({ theme }) => ({
   margin: '70px 0px',
   padding: '50px',
   width: '555px',
-  border: '1px solid #00E5FF',
+  border: '1px solid #bb0000',
   borderRadius: '24px',
 }));
 

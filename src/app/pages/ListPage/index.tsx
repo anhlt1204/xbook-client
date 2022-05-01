@@ -1,7 +1,7 @@
 import React from 'react';
 import { OneColumnLayout } from 'app/components/Layout';
 import { Box, Grid, Typography } from '@mui/material';
-import { TitleList, WrapperList } from './style';
+import { TitleList, TitleListBox, WrapperList } from './style';
 import SearchList from './components/SearchList';
 import SelectList from './components/SelectList';
 import Item from 'app/components/Item';
@@ -61,14 +61,16 @@ export function ListPage() {
         <title>{product.category}</title>
       </Helmet>
       <OneColumnLayout>
-        <Box sx={{ mt: '50px' }}>
-          <TitleList>{product.category}</TitleList>
+        <Box>
+          <TitleListBox>
+            <TitleList>{product.category}</TitleList>
+          </TitleListBox>
           <WrapperList>
             <Box
               sx={{
                 display: 'flex',
                 gap: '30px',
-                justifyContent: 'flex-end',
+                justifyContent: 'space-between',
                 mb: '70px',
               }}
             >

@@ -63,16 +63,34 @@ export default function List(props: Props) {
 }
 
 const ListWrapper = styled(Box)(({ theme }) => ({
-  marginTop: '150px',
+  marginTop: '130px',
   marginBottom: '50px',
 
   '& > h2': {
     marginBottom: '50px',
-    textAlign: 'center',
     fontSize: '36px',
     lineHeight: '48px',
     fontWeight: 'bold',
-    textTransform: 'uppercase',
+    color: '#bb0000',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+
+    '&::before': {
+      content: '""',
+      marginRight: '20px',
+      width: '20%',
+      height: 'auto',
+      border: '1px solid #bb0000',
+    },
+
+    '&::after': {
+      content: '""',
+      marginLeft: '20px',
+      width: '20%',
+      height: 'auto',
+      border: '0.25px solid #bb0000',
+    },
   },
 
   '& .MuiGrid-item': {

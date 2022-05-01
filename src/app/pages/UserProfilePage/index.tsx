@@ -7,7 +7,6 @@ import {
   FormProfile,
   InputProfile,
   LabelProfile,
-  TopProfile,
 } from './style';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { useForm } from 'react-hook-form';
@@ -102,9 +101,6 @@ export function UserProfilePage() {
       </Helmet>
       <OneColumnLayout>
         <Box sx={{ mt: '50px', mb: '50px' }}>
-          <TopProfile>
-            <AccountCircleIcon />
-          </TopProfile>
           <BottomProfile>
             <FormProfile onSubmit={form.handleSubmit(onSubmit)}>
               <Box
@@ -113,8 +109,12 @@ export function UserProfilePage() {
                   lineHeight: '36px',
                   fontWeight: 700,
                   textTransform: 'capitalize',
+                  color: '#bb0000',
+                  display: 'flex',
+                  alignItems: 'center',
                 }}
               >
+                <AccountCircleIcon sx={{ width: '36px', height: '36px' }} />
                 Thông tin tài khoản
               </Box>
               <Box>

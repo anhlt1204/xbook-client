@@ -9,7 +9,7 @@ export default function Header() {
     <Box
       sx={{
         width: '100%',
-        height: '160px',
+        height: '125px',
       }}
     >
       <Container
@@ -22,10 +22,10 @@ export default function Header() {
           container
           alignItems="center"
           justifyContent="space-between"
-          sx={{ height: '80px' }}
+          sx={{ height: '70px' }}
         >
           <LogoHeader />
-          <HeaderMenu />
+          <SearchBar />
           <ButtonGroupHeader />
         </Grid>
 
@@ -33,9 +33,9 @@ export default function Header() {
           container
           alignItems="center"
           justifyContent="center"
-          sx={{ height: '80px', borderBottom: '2px solid #28CE7E' }}
+          sx={{ height: '55px', borderBottom: '2px solid #bb0000' }}
         >
-          <SearchBar />
+          <HeaderMenu />
         </Grid>
       </Container>
     </Box>

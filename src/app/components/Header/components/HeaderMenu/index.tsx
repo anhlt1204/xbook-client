@@ -1,11 +1,18 @@
 import { Box } from '@mui/material';
+import { selectGlobal } from 'app/components/GlobalState/selector';
+import { useSelector } from 'react-redux';
 import MenuList from '../MenuList';
 import HeaderMenuItem from './HeaderMenuItem';
 
 export default function HeaderMenu() {
+  const { listCategory } = useSelector(selectGlobal);
+
   return (
     <Box display="flex" alignItems="center" sx={{ gap: '40px' }}>
-      <HeaderMenuItem text="Trang chủ" link="/" />
+      {listCategory.slice(0, 4).map((e, i) => (
+        <HeaderMenuItem text={e.name} link={`/product-list/${e.id}`} key={i} />
+      ))}
+
       <MenuList>
         <Box>
           <Box
@@ -17,7 +24,7 @@ export default function HeaderMenu() {
               cursor: 'pointer',
             }}
           >
-            Danh mục
+            Khác
           </Box>
         </Box>
       </MenuList>

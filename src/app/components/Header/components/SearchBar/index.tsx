@@ -28,7 +28,7 @@ export default function SearchBar() {
           <InputAdornment position="end">
             <SearchIcon
               onClick={handleClickSearch}
-              sx={{ '&:hover': { cursor: 'pointer', color: '#02C4DA' } }}
+              sx={{ '&:hover': { cursor: 'pointer', color: '#bb0000' } }}
             />
           </InputAdornment>
         ),

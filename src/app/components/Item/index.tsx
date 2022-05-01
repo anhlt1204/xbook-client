@@ -23,9 +23,23 @@ export default function Item(props: Props) {
       </Box>
       <Box className="title">{props.title}</Box>
 
-      <Box className="author">{props.author}</Box>
+      <ContentBox>
+        <Box>
+          <Box className="label">Tác giả</Box>
+          <Box className="author">{props.author}</Box>
+        </Box>
 
-      <Box className="price">{props.price.toLocaleString('en-US')} VNĐ</Box>
+        <Box
+          sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'flex-end',
+          }}
+        >
+          <Box className="label">Giá bán (vnđ)</Box>
+          <Box className="price">{props.price.toLocaleString('en-US')} </Box>
+        </Box>
+      </ContentBox>
     </ItemWrapper>
   );
 }
@@ -67,28 +81,35 @@ const ItemWrapper = styled(Box)(({ theme }) => ({
     overflow: 'hidden',
     textOverflow: 'ellipsis',
     wordBreak: 'break-word',
+    textTransform: 'capitalize',
   },
+}));
 
-  '& .author': {
-    marginTop: '10px',
-    display: '-webkit-box',
-    WebkitLineClamp: '1',
-    WebkitBoxOrient: 'vertical',
-    overflow: 'hidden',
-    textOverflow: 'ellipsis',
-    wordBreak: 'break-word',
+const ContentBox = styled(Box)(({ theme }) => ({
+  marginTop: '15px',
+  display: 'flex',
+  gap: '10px',
+  justifyContent: 'space-between',
+
+  '& .label': {
     fontSize: '12px',
     lineHeight: '16px',
     fontWeight: 700,
-    color: 'rgba(0,0,0,0.7)',
+    color: 'rgba(0,0,0,0.5)',
+  },
+
+  '& .author': {
+    marginTop: '5px',
+    fontSize: '14px',
+    lineHeight: '17px',
+    fontWeight: 'bold',
+    color: '#000',
   },
 
   '& .price': {
-    marginTop: '10px',
-    display: 'flex',
-    justifyContent: 'flex-end',
-    fontSize: '18px',
-    lineHeight: '24px',
+    marginTop: '5px',
+    fontSize: '14px',
+    lineHeight: '17px',
     fontWeight: 'bold',
     color: '#FF2222',
   },

@@ -169,7 +169,7 @@ export function DetailPage() {
                         onClick={handleAddCart}
                         sx={{
                           fontWeight: 'bold',
-                          color: '#000',
+                          color: '#FFF',
                           padding: '10px 20px',
                         }}
                       >
@@ -184,7 +184,7 @@ export function DetailPage() {
                             color: 'red',
                           }}
                         >
-                          Đăng nhập để mua hàng!
+                          Bạn chưa đăng nhập!
                         </Typography>
                       )}
 

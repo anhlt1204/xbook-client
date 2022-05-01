@@ -68,7 +68,7 @@ export const ItemCartNumber = styled(ButtonGroup)(({ theme }) => ({
   '& .active': {
     '&:hover': {
       cursor: 'pointer',
-      background: 'rgba(0,239,255,0.55)',
+      background: 'rgba(187,0,0,0.36)',
     },
   },
 

@@ -46,7 +46,7 @@ export default function ButtonGroupHeader() {
               color: '#000000',
 
               '&:hover': {
-                color: '#00E5FF',
+                color: '#bb0000',
                 cursor: 'pointer',
               },
             }}

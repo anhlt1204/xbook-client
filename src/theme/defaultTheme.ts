@@ -5,7 +5,7 @@ const DefaultTheme = createTheme({
   palette: {
     mode: 'light',
     primary: {
-      main: '#00E5FF',
+      main: '#bb0000',
       contrastText: '#FFFFFF',
     },
     secondary: {

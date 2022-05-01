@@ -11,7 +11,7 @@ const ButtonCustom = styled(Button)<DisabledStyle>(
   ({ variant, disabled, loading, sx }) => ({
     borderRadius: '8px',
     textTransform: 'none',
-    color: '#000',
+    color: '#FFF',
     border: 'none',
     fontWeight: 700,
     fontSize: '18px',
@@ -26,9 +26,9 @@ const ButtonCustom = styled(Button)<DisabledStyle>(
 
     ...(variant === 'contained' &&
       !disabled && {
-        background: '#02C4DA',
+        background: '#bb0000',
         '&:hover': {
-          background: ' #00E5FF',
+          background: ' #fb241d',
         },
       }),
     ...(variant === 'outlined' &&
@@ -41,7 +41,7 @@ const ButtonCustom = styled(Button)<DisabledStyle>(
       !disabled && {
         background: '#454954',
         '&:hover': {
-          background: ' #00E5FF',
+          background: ' #bb0000',
           border: 'none',
         },
       }),
