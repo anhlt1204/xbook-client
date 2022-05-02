@@ -43,7 +43,11 @@ export function CartPage() {
                   {detailCart.orderItems.map((e, i) => (
                     <ItemCart
                       product_id={e.product.id}
-                      image={e.product.product_images[0].imageUrl}
+                      image={
+                        e.product.product_images[
+                          e.product.product_images.length - 1
+                        ].imageUrl
+                      }
                       title={e.product.title}
                       price={e.product.price}
                       numb={e.quantity}

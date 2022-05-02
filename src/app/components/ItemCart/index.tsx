@@ -33,7 +33,7 @@ export default function CartItem(props: Props) {
   const { actions } = useCartSlice();
 
   const handleAdd = () => {
-    if (numb >= current) {
+    if (numb < current) {
       dispatch(
         actions.addToCartRequest({
           productId: product_id,

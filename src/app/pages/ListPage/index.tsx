@@ -1,7 +1,14 @@
 import React from 'react';
 import { OneColumnLayout } from 'app/components/Layout';
 import { Box, Grid, Typography } from '@mui/material';
-import { TitleList, TitleListBox, WrapperList } from './style';
+import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import {
+  PaginationCustom,
+  TitleList,
+  TitleListBox,
+  WrapperList,
+} from './style';
 import SearchList from './components/SearchList';
 import SelectList from './components/SelectList';
 import Item from 'app/components/Item';
@@ -50,7 +57,7 @@ export function ListPage() {
         category: '',
         total_item: 0,
         total_page: 0,
-        current_page: 0,
+        current_page: 1,
       }),
     );
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
@@ -104,7 +111,9 @@ export function ListPage() {
                     <Item
                       id={e.id}
                       image={
-                        !_.isEmpty(e.images[0]?.link) ? e.images[0].link : ''
+                        !_.isEmpty(e.images[e.images.length - 1]?.link)
+                          ? e.images[e.images.length - 1].link
+                          : ''
                       }
                       title={e.title}
                       author={e.author}
@@ -126,6 +135,35 @@ export function ListPage() {
               </Typography>
             )}
           </WrapperList>
+          <PaginationCustom>
+            <Box>
+              <Box
+                onClick={
+                  product.page === 1
+                    ? () => {}
+                    : () =>
+                        dispatch(globalActions.setProductPage(product.page - 1))
+                }
+                className={product.page === 1 ? 'disable' : 'active'}
+              >
+                <ArrowBackIosNewIcon fontSize="small" />
+              </Box>
+              <Box>{product.page}</Box>
+              <Box
+                onClick={
+                  product.page === product.total_page
+                    ? () => {}
+                    : () =>
+                        dispatch(globalActions.setProductPage(product.page + 1))
+                }
+                className={
+                  product.page === product.total_page ? 'disable' : 'active'
+                }
+              >
+                <ArrowForwardIosIcon fontSize="small" />
+              </Box>
+            </Box>
+          </PaginationCustom>
         </Box>
       </OneColumnLayout>
     </>

@@ -91,9 +91,10 @@ export function DetailPage() {
             </BreadcumbItem>{' '}
             /{' '}
             <BreadcumbItem
-              onClick={() =>
-                history.push(`/product-list/${product.detail.categoryId}`)
-              }
+              onClick={() => {
+                dispatch(globalActions.setProductPage(1));
+                history.push(`/product-list/${product.detail.categoryId}`);
+              }}
             >
               {product.detail.category}
             </BreadcumbItem>{' '}
@@ -108,8 +109,11 @@ export function DetailPage() {
               <ImageBox>
                 <img
                   src={
-                    !_.isEmpty(product.detail.images[0])
-                      ? product.detail.images[0].link
+                    !_.isEmpty(
+                      product.detail.images[product.detail.images.length - 1],
+                    )
+                      ? product.detail.images[product.detail.images.length - 1]
+                          .link
                       : ''
                   }
                   alt={product.detail.title}
@@ -140,11 +144,7 @@ export function DetailPage() {
                     </Typography>
                     <Typography component="p">
                       <FiberManualRecordIcon />
-                      Số lượng:{' '}
-                      <span>
-                        {product.detail.currentNumber -
-                          product.detail.quantitySelled}
-                      </span>
+                      Số lượng: <span>{product.detail.currentNumber}</span>
                     </Typography>
                   </Grid>
                   <Grid item md={6} className="right">

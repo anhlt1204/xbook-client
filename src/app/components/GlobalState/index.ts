@@ -98,6 +98,10 @@ const slice = createSlice({
       state.product.page = action.payload.current_page;
     },
 
+    setProductPage(state, action: PayloadAction<number>) {
+      state.product.page = action.payload;
+    },
+
     getProductDetailRequest(state, action) {},
 
     setDetailProduct(

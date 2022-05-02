@@ -28,3 +28,44 @@ export const TitleList = styled(Box)(({ theme }) => ({
   textTransform: 'uppercase',
   color: '#FFF',
 }));
+
+export const PaginationCustom = styled(Box)(({ theme }) => ({
+  marginTop: '40px',
+  paddingBottom: '30px',
+
+  display: 'flex',
+  justifyContent: 'center',
+
+  '& > div': {
+    height: '30px',
+    display: 'flex',
+
+    '& > div': {
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      height: '30px',
+      width: '30px',
+      padding: '0px',
+      border: '1px solid #000',
+      color: '#000',
+      cursor: 'pointer',
+
+      '&.active': {
+        '&:hover': {
+          background: 'rgba(187,0,0,0.36)',
+        },
+      },
+
+      '&.disable': {
+        background: 'rgba(234,231,231,0.9)',
+        border: '1px solid rgba(234,231,231,0.9)',
+        cursor: 'unset',
+
+        '& .MuiSvgIcon-root': {
+          color: '#FFF',
+        },
+      },
+    },
+  },
+}));

@@ -1,7 +1,8 @@
 import { Box, Tooltip } from '@mui/material';
+import { useGlobalSlice } from 'app/components/GlobalState';
 import { selectGlobal } from 'app/components/GlobalState/selector';
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
 
@@ -10,9 +11,14 @@ export default function MenuList({ children }) {
 
   const path = history.location.pathname;
 
+  const dispatch = useDispatch();
+
+  const { actions } = useGlobalSlice();
+
   const { listCategory } = useSelector(selectGlobal);
 
   const handleRedirect = id => {
+    dispatch(actions.setProductPage(1));
     history.push(`/product-list/${id}`);
   };
   return (

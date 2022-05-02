@@ -122,7 +122,11 @@ export function BuyPage() {
                 {detailCart.orderItems.map((e, i) => (
                   <ItemBuy
                     productID={e.product.id}
-                    image={e.product.product_images[0].imageUrl}
+                    image={
+                      e.product.product_images[
+                        e.product.product_images.length - 1
+                      ].imageUrl
+                    }
                     title={e.product.title}
                     price={e.product.price}
                     quantity={e.quantity}
