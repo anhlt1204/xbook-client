@@ -50,7 +50,11 @@ export default function List(props: Props) {
           >
             <Item
               id={e.id}
-              image={!_.isEmpty(e.images[0]?.link) ? e.images[0].link : ''}
+              image={
+                !_.isEmpty(e.images[e.images.length - 1]?.link)
+                  ? e.images[e.images.length - 1].link
+                  : ''
+              }
               title={e.title}
               author={e.author}
               price={e.price}

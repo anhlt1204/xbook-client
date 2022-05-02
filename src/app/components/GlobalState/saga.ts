@@ -68,7 +68,7 @@ function* handleGetListProduct(action) {
         category: '',
         total_item: 0,
         total_page: 0,
-        current_page: 0,
+        current_page: 1,
       }),
     );
 
