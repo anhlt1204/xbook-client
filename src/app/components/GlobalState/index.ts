@@ -18,7 +18,7 @@ export const initialState: GlobalState = {
     total_page: 0,
 
     page: 1,
-    size: 5,
+    size: 8,
 
     detail: {
       id: -1,
