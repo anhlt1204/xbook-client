@@ -2,9 +2,16 @@ import { PayloadAction } from '@reduxjs/toolkit';
 import { createSlice } from 'utils/@reduxjs/toolkit';
 import { useInjectReducer, useInjectSaga } from 'utils/redux-injectors';
 import cartSaga from './saga';
-import { CartState } from './types';
+import { CartState, ICart } from './types';
 
 export const initialState: CartState = {
+  listCart: [],
+  total_item: 0,
+  total_page: 0,
+
+  page: 1,
+  size: 5,
+
   detailCart: { orderItems: [], total: 0, totalPrice: 0 },
 
   addStatus: '',
@@ -18,6 +25,30 @@ const slice = createSlice({
   name: 'cart',
   initialState,
   reducers: {
+    getListCart(state, action) {},
+
+    setCartData(
+      state,
+      action: PayloadAction<{
+        data: ICart[] | [];
+        total_item: number;
+        total_page: number;
+      }>,
+    ) {
+      state.listCart = action.payload.data;
+      state.total_item = action.payload.total_item;
+      state.total_page = action.payload.total_page;
+    },
+
+    setPage(state, action: PayloadAction<number>) {
+      if (action.payload < 0) {
+        state.page = 1;
+        return;
+      }
+
+      state.page = action.payload;
+    },
+
     getCurrentCart(state) {},
 
     setDetailCart(state, action) {

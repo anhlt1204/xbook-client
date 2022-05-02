@@ -2,7 +2,29 @@ import { call, takeLatest, put, all } from 'redux-saga/effects';
 import { cartService } from 'services/api/cartService';
 import { actions } from '.';
 
-function* handleGetList() {
+function* handleGetList(action) {
+  try {
+    const response = yield call(cartService.getListCart, action.payload);
+
+    yield put(
+      actions.setCartData({
+        data: response.data.data,
+        total_item: response.data.total_item,
+        total_page: response.data.total_page,
+      }),
+    );
+  } catch (error) {
+    yield put(
+      actions.setCartData({
+        data: [],
+        total_item: 0,
+        total_page: 0,
+      }),
+    );
+  }
+}
+
+function* handleGetCurrent() {
   try {
     const response = yield call(cartService.getCurrentCart);
 
@@ -47,7 +69,11 @@ function* handlePayment(action) {
 }
 
 export function* watchHandleGetList() {
-  yield takeLatest(actions.getCurrentCart.type, handleGetList);
+  yield takeLatest(actions.getListCart.type, handleGetList);
+}
+
+export function* watchHandleGetCurrent() {
+  yield takeLatest(actions.getCurrentCart.type, handleGetCurrent);
 }
 
 export function* watchHandleAdd() {
@@ -65,6 +91,7 @@ export function* watchHandlePayment() {
 export default function* cartSaga() {
   yield all([
     watchHandleGetList(),
+    watchHandleGetCurrent(),
     watchHandleAdd(),
     watchHandleRemove(),
     watchHandlePayment(),

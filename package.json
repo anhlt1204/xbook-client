@@ -41,6 +41,7 @@
     "jest-styled-components": "7.0.8",
     "lint-staged": "12.1.7",
     "lodash": "4.17.21",
+    "moment": "2.29.3",
     "node-plop": "0.26.2",
     "plop": "2.7.4",
     "prettier": "2.5.1",

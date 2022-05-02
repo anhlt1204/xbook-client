@@ -33,6 +33,7 @@ import ProtectedRoute from './components/ProtectedRoute';
 import { useCartSlice } from './pages/CartPage/slice';
 import { selectCart } from './pages/CartPage/slice/selector';
 import { selectGlobal } from './components/GlobalState/selector';
+import { CartHistoryPage } from './pages/CartHistoryPage/Loadable';
 
 export function App() {
   const { i18n } = useTranslation();
@@ -93,6 +94,7 @@ export function App() {
           <Route exact path="/product-list/:id" component={ListPage} />
           <Route exact path="/product-detail/:id" component={DetailPage} />
           <ProtectedRoute exact path="/cart" component={CartPage} />
+          <ProtectedRoute exact path="/cart-list" component={CartHistoryPage} />
           <ProtectedRoute exact path="/buy" component={BuyPage} />
           <Route component={NotFoundPage} />
         </Switch>

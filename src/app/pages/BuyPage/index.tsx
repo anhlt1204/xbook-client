@@ -256,7 +256,10 @@ export function BuyPage() {
           type="success"
           text="Đặt hàng thành công!"
           isOpen={paymentStatus === 'success'}
-          handle={() => history.push('/')}
+          handle={() => {
+            dispatch(cartActions.setPage(1));
+            history.push('/cart-list');
+          }}
           onClose={() => dispatch(cartActions.setPaymentStatus(''))}
         />
       )}
