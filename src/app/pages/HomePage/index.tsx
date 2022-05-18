@@ -18,7 +18,7 @@ export function HomePage() {
           <Feature />
           <List title="Sách mới" type="filter" value="new" />
 
-          <List title="Sách bán chạy" type="filter" value="hot" />
+          <List title="Sách bán chạy" type="filter" value="old" />
         </Box>
       </OneColumnLayout>
     </>
